@@ -1,0 +1,15 @@
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/bin/Debug/net7.0/Csharp_masterclass
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/bin/Debug/net7.0/Csharp_masterclass.deps.json
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/bin/Debug/net7.0/Csharp_masterclass.runtimeconfig.json
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/bin/Debug/net7.0/Csharp_masterclass.dll
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/bin/Debug/net7.0/Csharp_masterclass.pdb
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.csproj.AssemblyReference.cache
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.GeneratedMSBuildEditorConfig.editorconfig
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.AssemblyInfoInputs.cache
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.AssemblyInfo.cs
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.csproj.CoreCompileInputs.cache
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.dll
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/refint/Csharp_masterclass.dll
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.pdb
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/Csharp_masterclass.genruntimeconfig.cache
+/Users/5_vania_5/Desktop/Udemy/C# masterclass/Course/Csharp_masterclass/obj/Debug/net7.0/ref/Csharp_masterclass.dll
