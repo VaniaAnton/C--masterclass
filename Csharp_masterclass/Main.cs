@@ -8,7 +8,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Section3.Test();
+			Section3.Method();
 		}
 	}
 }

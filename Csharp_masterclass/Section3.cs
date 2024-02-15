@@ -4,7 +4,7 @@ namespace Section.Third
 {
 	public class Section3
 	{
-            public static void Test()
+            public static void Method()
             {
                 string n1 = "A";
                 string n2 = "B";
