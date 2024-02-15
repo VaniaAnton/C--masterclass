@@ -1,6 +1,7 @@
 ﻿using System;
 using Section.First;
 using Section.Third;
+using Section.Forth;
 
 namespace Section
 {
@@ -8,7 +9,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Section3.Method();
+			Section4.Test();
 		}
 	}
 }
