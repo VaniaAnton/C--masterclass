@@ -6,10 +6,30 @@ namespace Section.Sixth
 {
 	public class Car
 	{
-		//member variable
+		//member variable/fields
 		private string _name;//private field typically used for storing data.
 		private int _horsePower;
 		private string _color;
+
+		//Public properties
+		public string Name
+		{
+			get { return _name; }//get accessor
+			set {
+				if(value == "")
+				{
+					_name = "HelLo, default name"
+				}
+				else
+				{
+					_name = value;
+				}
+			; }//set accessor
+        }
+
+		public void SetName(string name) { _name = name; }
+		public string GetName() { return _name; }
+
 
         //Constructors
         //Default constructor
