@@ -82,6 +82,37 @@ namespace Section.Seventh
             Console.WriteLine("Central element is {0}", array3D[1,0,1]);
             Console.ReadKey();
         }
+
+        public static bool Checker(string[,] board)
+        {
+
+            //Horizontal check
+            for (int i = 0, j = 0; i < board.GetLength(0); i++)
+            {
+                if (board[i, j] == board[i, j+1] && board[i, j + 1] == board[i, j+2])
+                {
+                    return true;
+                }
+            }
+            //Vertical check
+            for (int i = 0, j = 0; i < board.GetLength(0); j++)
+            {
+                if (board[i, j] == board[i+1, j] && board[+1, j] == board[i+2, j])
+                {
+                    return true;
+                }
+            }
+            //Diagonal check
+            if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 2])
+            {
+                return true;
+            }
+            if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 0])
+            {
+                return true;
+            }
+            return false;
+        }
         
 
 	}
