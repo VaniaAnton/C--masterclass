@@ -32,6 +32,25 @@ namespace Section.Seventh
             Console.WriteLine("Length of gradesOfMathStudentsA: {0}", gradesOfMathStudentsA.Length);
             Console.ReadKey();
         }
+
+        public static void ForEach()
+        {
+            int[] numbers = new int[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                numbers[i] = i;
+            }
+
+            int counter = 0;
+            foreach (var i in numbers)
+            {
+                Console.WriteLine("Element {0} = {1}",counter ,i);
+                counter++;
+            }
+
+        }
+
 	}
 }
 

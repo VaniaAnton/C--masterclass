@@ -11,7 +11,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Arrays.Test();
+			Arrays.ForEach();
 
 
 
