@@ -4,7 +4,7 @@ namespace Section.Seventh
 {
 	public class Arrays
 	{
-		public static void Test()
+		public static void classicArray()
         {
             //first way of initialiazing an array
             int[] grades = new int[5];
@@ -30,7 +30,6 @@ namespace Section.Seventh
 
             //get length
             Console.WriteLine("Length of gradesOfMathStudentsA: {0}", gradesOfMathStudentsA.Length);
-            Console.ReadKey();
         }
 
         public static void ForEach()
@@ -50,7 +49,42 @@ namespace Section.Seventh
             }
 
         }
+        public static void MultiDimensionalArray()
+        {
+            //declare 2d array
+            string[,] matrix2D;
+
+
+            //declare 3d array
+            int[,,] matrix3D;
+
+            // two dimensional array
+            int[,] array2D = new int[,]
+            {
+            {1,2,3 },//row 0
+            {4,5,6 },//row 1
+            {7,8,9 }//row 2
+            };
+
+            Console.WriteLine("Central element is {0}", array2D[1,1]);
+
+            string[,,] array3D = new string[,,]
+            {
+                {
+                    {"000", "001" },
+                    {"010", "011" }
+                },
+                {
+                    {"100", "101" },
+                    {"110", "111" }
+                }
+            };
+            Console.WriteLine("Central element is {0}", array3D[1,0,1]);
+            Console.ReadKey();
+        }
+        
 
 	}
+ 
 }
 
