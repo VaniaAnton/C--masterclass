@@ -57,7 +57,7 @@ namespace TicTacToe
                         break;
                        
                     }
-                    else if(turns==9)
+                    else if(turns==10)
                     {
                         Console.WriteLine("\nWe have a draw");
                         Console.WriteLine("Please any key to reset the game!");
