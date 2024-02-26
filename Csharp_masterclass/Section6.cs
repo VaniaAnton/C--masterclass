@@ -18,13 +18,12 @@ namespace Section.Sixth
 			set {
 				if(value == "")
 				{
-					_name = "HelLo, default name"
+					_name = "HelLo, default name";
 				}
 				else
 				{
 					_name = value;
-				}
-			; }//set accessor
+				}; }//set accessor
         }
 
 		public void SetName(string name) { _name = name; }
