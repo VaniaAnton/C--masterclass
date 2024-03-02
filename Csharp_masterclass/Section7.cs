@@ -124,8 +124,12 @@ namespace Section.Seventh
             string[] test = { "to", "pu", "du" };
             //ParamsMethod("to", "pu", "du", "to", "pu", "du", "to", "pu", "du", "to", "pu", "du");
             // ParamsMethod(test);
-            ParamsMethod2(price, pi, at, book);
-            ParamsMethod2("Hello)", 5.55, '$' );
+            //ParamsMethod2(price, pi, at, book);
+            //ParamsMethod2("Hello)", 5.55, '$' );
+
+            Console.WriteLine(GetMin(2, 5, 6, 8, 9, -3, 0, 7, 4, 3, 2, 2));
+
+
         }
         public static void ParamsMethod(params string[] sentence)
         {
@@ -144,6 +148,19 @@ namespace Section.Seventh
                 Console.WriteLine(obj + " ");
             }
             Console.WriteLine();
+        }
+
+        public static int GetMin(params int[] numbers)
+        {
+            int min = int.MaxValue;
+            foreach (int num in numbers)
+            {
+                if (num < min)
+                {
+                    min = num;
+                }
+            }
+            return min;
         }
 	}
  
