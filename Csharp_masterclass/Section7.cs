@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Section.Seventh
 {
@@ -128,6 +129,48 @@ namespace Section.Seventh
             //ParamsMethod2("Hello)", 5.55, '$' );
 
             Console.WriteLine(GetMin(2, 5, 6, 8, 9, -3, 0, 7, 4, 3, 2, 2));
+
+
+        }
+
+        public static void ArraysList()
+        {
+            //declaring an ArrayList
+            ArrayList myArrList = new ArrayList();
+            ArrayList myArrList2 = new ArrayList(100);
+
+            myArrList.Add("Something");
+            myArrList.Add('$');
+            myArrList.Add(5);
+            myArrList.Add(12);
+            myArrList.Add(5);
+            myArrList.Add(5.5);
+
+            //delete element with specific value from my list
+            myArrList.Remove(5);
+
+            //delete element at specific position
+            myArrList.RemoveAt(1);
+
+            Console.WriteLine(myArrList.Count);
+
+            double sum = 0;
+            foreach (object obj in myArrList)
+            {
+                if (obj is int)
+                {
+                    sum += Convert.ToDouble(obj);
+                }
+                else if (obj is double)
+                {
+                    sum += (double)obj;
+                }
+                else if (obj is string)
+                {
+                    Console.WriteLine(obj);
+                }
+            }
+            Console.WriteLine(sum);
 
 
         }
