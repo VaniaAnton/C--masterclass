@@ -12,7 +12,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-            TicTacToe.TicTacToe.Start();
+			Arrays.Params();
 
 
 			Console.ReadKey();

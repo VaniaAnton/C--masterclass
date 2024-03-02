@@ -83,38 +83,68 @@ namespace Section.Seventh
             Console.ReadKey();
         }
 
-        public static bool Checker(string[,] board)
+        public static void JaggedArray()
         {
+            //Declare jaggedArray
+            int[][] jaggedArray = new int[3][];
 
-            //Horizontal check
-            for (int i = 0, j = 0; i < board.GetLength(0); i++)
+            jaggedArray[0] = new int[5];
+            jaggedArray[1] = new int[3];
+            jaggedArray[2] = new int[2];
+
+            jaggedArray[0] = new int[] {1,2,3,4,5};
+            jaggedArray[1] = new int[] {6,7,8};
+            jaggedArray[2] = new int[] {9,10};
+
+            //Alternative way:
+            int[][] jaggedArray2 = new int[][]
             {
-                if (board[i, j] == board[i, j+1] && board[i, j + 1] == board[i, j+2])
+                new int[] {1,2,3,4,5},
+                new int[] {6,7,8}
+            };
+
+            //Print array
+            for (int i = 0; i < jaggedArray2.Length; i++)
+            {
+                Console.WriteLine("Element {0}", i);
+                for (int j = 0; j < jaggedArray2[i].Length; j++)
                 {
-                    return true;
+                    Console.WriteLine("then {0}", jaggedArray2[i][j]);
                 }
             }
-            //Vertical check
-            for (int i = 0, j = 0; i < board.GetLength(0); j++)
-            {
-                if (board[i, j] == board[i+1, j] && board[+1, j] == board[i+2, j])
-                {
-                    return true;
-                }
-            }
-            //Diagonal check
-            if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 2])
-            {
-                return true;
-            }
-            if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 0])
-            {
-                return true;
-            }
-            return false;
         }
-        
 
+        public static void Params()
+        {
+            int price = 5;
+            float pi = 3.14f;
+            char at = '@';
+            string book = "the Hobbit";
+
+            string[] test = { "to", "pu", "du" };
+            //ParamsMethod("to", "pu", "du", "to", "pu", "du", "to", "pu", "du", "to", "pu", "du");
+            // ParamsMethod(test);
+            ParamsMethod2(price, pi, at, book);
+            ParamsMethod2("Hello)", 5.55, '$' );
+        }
+        public static void ParamsMethod(params string[] sentence)
+        {
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                Console.Write(sentence[i]+ " ");
+            }
+        }
+
+        public static void ParamsMethod2(params object[] stuff)
+        {
+            //for each loop to go through the array of objects
+            foreach (object obj in stuff)
+            {
+                //print each obj followed by space
+                Console.WriteLine(obj + " ");
+            }
+            Console.WriteLine();
+        }
 	}
  
 }
