@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Section.Seventh
 {
@@ -211,34 +212,95 @@ namespace Section.Seventh
         {
             Hashtable studentsTable = new Hashtable();
 
-            //create hashtable
-            Student student1 = new Student(1, "Maris", 98);
-            Student student2 = new Student(2, "Oleg", 76);
-            Student student3 = new Student(3, "Ivan", 43);
-            Student student4 = new Student(4, "Pablo", 55);
+            Student[] students = new Student[5];
+            students[0] = new Student(1, "Denis", 88);
+            students[1] = new Student(2, "Olaf", 97);
+            students[2] = new Student(6, "Ragner", 65);
+            students[3] = new Student(1, "Luise", 73);
+            students[4] = new Student(5, "Lesi", 58);
 
-            //add data
-            studentsTable.Add(student1.Id, student1);
-            studentsTable.Add(student2.Id, student2);
-            studentsTable.Add(student3.Id, student3);
-            studentsTable.Add(student4.Id, student4);
-
-            //retrieve individual item with khown ID
-            Student storedStudent1 = (Student)studentsTable[student1.Id];
-
-            //retrieve all values from a hashtable
-            foreach (DictionaryEntry entry in studentsTable)
+            foreach (Student stud in students)
             {
-                Student temp = (Student)entry.Value;
-                Console.WriteLine("Student Id:{0}, Name {1}, GPA {2}", temp.Id, temp.Name, temp.GPA);
+                if (studentsTable.ContainsKey(stud.Id))
+                {
+                    Console.WriteLine(" Sorry, A student with the same Id already exists : {0}", stud.Id);
+                }
+                else
+                {
+                    studentsTable.Add(stud.Id, stud);
+                    Console.WriteLine("Student with {0} was added", stud.Id);
+                }
+                  
             }
 
-            foreach (Student value in studentsTable.Values)
+          
+
+            
+        }
+
+        public static void Dictionaries()
+        {
+            Employee[] employees =
             {
-                Console.WriteLine("Student Id:{0}, Name {1}, GPA {2}", value.Id, value.Name, value.GPA);
+                new Employee("CEO", "Vania", 35, 200),
+                new Employee("Manager", "Joe", 32, 25),
+                new Employee("HR", "Lora", 30, 21),
+                new Employee("Secretary", "Anton", 28, 18),
+                new Employee("Team Lead", "Peter", 55, 35),
+                new Employee("Intern", "Ernik", 22, 8),
+            };
+            Dictionary<int, string> myDictionary = new Dictionary<int, string>()
+            {
+                {1, "one" },
+                {2, "two" },
+                {3, "three" },
+            };
+
+            Dictionary<string, Employee> employeeDirectory = new Dictionary<string, Employee>();
+            foreach (Employee emp in employees)
+            {
+                employeeDirectory.Add(emp.Role, emp);
             }
 
-            //Console.WriteLine("Student Id:{0}, Name {1}, GPA {2}", storedStudent1.Id, storedStudent1.Name, storedStudent1.GPA);
+            for (int i = 0; i < employeeDirectory.Count; i++)
+            {
+                //using ElementAt(i) to return the key-value pair stored at index i
+                KeyValuePair<string, Employee> keyValuePair = employeeDirectory.ElementAt(i);
+                //print key
+                Console.WriteLine("Key : {0}", keyValuePair.Key);
+                //storing the value in an employee object
+                Employee employeeValue = keyValuePair.Value;
+                //printing the properties of the employee object
+                Console.WriteLine("Employee Name: {0}", employeeValue.Name);
+                Console.WriteLine("Employee Role: {0}", employeeValue.Role);
+                Console.WriteLine("Employee Age: {0}", employeeValue.Age);
+                Console.WriteLine("Employee Salary: {0}", employeeValue.Salary);
+
+            }
+
+            //using ContainKey() method
+            string key = "CEO";
+            if (employeeDirectory.ContainsKey(key))
+            {
+                Employee empl = employeeDirectory["CEO"];
+                Console.WriteLine("Employee name: {0}, Role: {1}, Salary: {2}", empl.Name, empl.Role, empl.Salary);
+            }
+
+            Employee result = null;
+            //using TryGetValue() it returns true it the operation was successful and false otherwise
+            if (employeeDirectory.TryGetValue("Intern", out result))
+            {
+                Console.WriteLine("value retrived");
+
+                Console.WriteLine("Employee Name: {0}", result.Name);
+                Console.WriteLine("Employee Role: {0}", result.Role);
+                Console.WriteLine("Employee Age: {0}", result.Age);
+                Console.WriteLine("Employee Salary: {0}", result.Salary);
+            }
+            else
+            {
+                Console.WriteLine("The key does not exist");
+            }
         }
 	}
 
@@ -257,6 +319,35 @@ namespace Section.Seventh
             this.GPA = gpa;
         }
     }
+
+    class Employee
+    {
+        public string  Role { get; set; }
+
+        public string  Name { get; set; }
+
+        public int  Age { get; set; }
+
+        public float  Rate { get; set; }
+
+        //yearly Salary = rate/h * number of days * number of weeks * numbers of months
+        public float  Salary
+        {
+            get
+            {
+                return Rate * 8 * 5 * 4 * 12;
+            }
+        }
+
+        public Employee(string role, string name, int age, float rate)
+        {
+            this.Role = role;
+            this.Name = name;
+            this.Age = age;
+            this.Rate = rate;
+        }
+    }
+    
  
 }
 
