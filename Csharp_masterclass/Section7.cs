@@ -240,6 +240,7 @@ namespace Section.Seventh
 
         public static void Dictionaries()
         {
+            //create dictionary
             Employee[] employees =
             {
                 new Employee("CEO", "Vania", 35, 200),
@@ -261,6 +262,30 @@ namespace Section.Seventh
             {
                 employeeDirectory.Add(emp.Role, emp);
             }
+
+            //update
+            string keytoUpdate = "HR";
+            if (employeeDirectory.ContainsKey(keytoUpdate))
+            {
+                employeeDirectory[keytoUpdate] = new Employee("HR", "Laura", 26, 18);
+                Console.WriteLine("Employee with role/key: {0} was updated", keytoUpdate);
+            }
+            else
+            {
+                Console.WriteLine("Sorry no data found");
+            }
+
+            //remove
+            string keytoRemove = "Intern";
+            if (employeeDirectory.Remove(keytoRemove))
+            {
+                Console.WriteLine("Employee with role/key: {0} was removed", keytoRemove);
+            }
+            else
+            {
+                Console.WriteLine("Sorry no data found");
+            }
+
 
             for (int i = 0; i < employeeDirectory.Count; i++)
             {
