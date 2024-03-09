@@ -327,6 +327,39 @@ namespace Section.Seventh
                 Console.WriteLine("The key does not exist");
             }
         }
+
+        public static void Stacks()
+        {
+            //definition a new Stack(Generic collections)
+            Stack<int> myStack = new Stack<int>();
+            //Add element be Push() method
+            myStack.Push(1);
+            myStack.Push(2);
+            //Peek() will return the element t the top of the Stack without removing it
+            Console.WriteLine("Top value in the Stack is {0}", myStack.Peek());
+            //Delete element from the stack
+            int poppedItem = myStack.Pop();
+            Console.WriteLine("Popped item is {0}", poppedItem);
+
+            //reverse array using stack
+            int[] numbers = new int[] { 8, 2, 3, 4, 7, 6, 2 };
+            Stack<int> numbersStack = new Stack<int>();
+            Console.Write("Array is: ");
+            foreach (int item in numbers)
+            {
+                Console.Write(item + " ");
+                //Add to stack
+                numbersStack.Push(item);
+            }
+
+            Console.WriteLine("");
+            Console.Write("Reversed array are: ");
+            while (numbersStack.Count>0)
+            {
+                Console.Write(numbersStack.Pop() + " ");
+            }
+
+        }
 	}
 
     class Student
