@@ -360,6 +360,71 @@ namespace Section.Seventh
             }
 
         }
+
+        public static void Queues()
+        {
+            //Queue is also Generic
+            Queue<int> queue = new Queue<int>();
+
+            //add number in the queue
+            queue.Enqueue(1);
+            //printing the element at the front of the queue
+            Console.WriteLine("The value at the front is : {0}", queue.Peek());
+            queue.Enqueue(2);
+            Console.WriteLine("The value at the front is : {0}", queue.Peek());
+            queue.Enqueue(3);
+            //remove the first added element
+            int deletedItem = queue.Dequeue();
+            Console.WriteLine("The value at the front is : {0}", queue.Peek());
+
+            Console.WriteLine();
+            //Solving simple task with orders 
+            Queue<Order> orderQueue = new Queue<Order>();
+            foreach (Order o in RecieveOrdersFromBranch1())
+            {
+                //add each order to the queue
+                orderQueue.Enqueue(o);
+            }
+            foreach (Order o in RecieveOrdersFromBranch2())
+            {
+                //add each order to the queue
+                orderQueue.Enqueue(o);
+            }
+            //As long as queue id not empty
+            while (orderQueue.Count>0)
+            {
+                //remove the order at the front of the queue
+                //and store it in a variable called currentOrder
+                Order currentOrder = orderQueue.Dequeue();
+                //process the order
+                currentOrder.ProcessOrder();
+            }
+
+        }
+
+        static Order[] RecieveOrdersFromBranch1()
+        {
+            //creating new orders array
+            Order[] orders = new Order[]
+            {
+                new Order(1,5),
+                new Order(2,4),
+                new Order(6,10)
+            };
+            return orders;
+        }
+
+        static Order[] RecieveOrdersFromBranch2()
+        {
+            //creating new orders array
+            Order[] orders = new Order[]
+            {
+                new Order(3,5),
+                new Order(4,4),
+                new Order(5,10)
+            };
+            return orders;
+        }
 	}
 
     class Student
@@ -403,6 +468,24 @@ namespace Section.Seventh
             this.Name = name;
             this.Age = age;
             this.Rate = rate;
+        }
+    }
+
+    class Order
+    {
+        public int OrderId { get; set; }
+
+        public int OrderQuantity { get; set; }
+
+        public Order(int id, int orderQuantity)
+        {
+            this.OrderId = id;
+            this.OrderQuantity = orderQuantity;
+        }
+
+        public void ProcessOrder()
+        {
+            Console.WriteLine($"Order {OrderId} processed! ");
         }
     }
     

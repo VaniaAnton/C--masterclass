@@ -12,7 +12,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Arrays.Stack();
+			Arrays.Queues();
 
 
 			Console.ReadKey();
