@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Section.Seventh
 {
-	public class Arrays
+	public class Arrays_and_Collections
 	{
         
 		public static void classicArray()
