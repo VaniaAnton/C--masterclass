@@ -4,6 +4,7 @@ using Section.Third;
 using Section.Forth;
 using Section.Sixth;
 using Section.Seventh;
+using Section.Eight;
 using TicTacToe;
 
 namespace Section
@@ -12,7 +13,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Arrays.Queues();
+			Debugging.MainDebug();
 
 
 			Console.ReadKey();
