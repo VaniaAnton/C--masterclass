@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			InheritanceDemo.Test();
+			VirtualOverrideDemo.Test();
 
 
 			Console.ReadKey();

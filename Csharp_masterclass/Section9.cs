@@ -2,6 +2,7 @@
 
 namespace Section.Ninth
 {
+    //------------Inheritance examples--------------
 	public class InheritanceDemo
 	{
 		public static void Test()
@@ -15,8 +16,7 @@ namespace Section.Ninth
             myTV.WatchTV();
         }
 	}
-
-    //Child class
+    //Child classes
     class Radio : ElectricalDevice
     {
         public Radio(bool isOn, string brand):base(isOn, brand){}
@@ -85,5 +85,100 @@ namespace Section.Ninth
             IsOn = false;
         }
     }
+
+    //--------Virtual and Override methods----------
+
+    public class VirtualOverrideDemo
+    {
+        public static void Test()
+        {
+            Dog dog = new Dog("Sif", 15);
+            Console.WriteLine($"{dog.Name} is {dog.Age} years old");
+            dog.MakeSound();
+            dog.Play();
+            dog.Eat();
+        }
+    }
+
+    class Animal
+    {
+        //name property
+        public string Name { get; set; }
+        //age property
+        public int Age { get; set; }
+        //age property
+        public bool IsHungry { get; set; }
+
+        public Animal(string name, int age)
+        {
+            Age = age;
+            Name = name;
+            //in our case all our animals are hungry by default :)
+            IsHungry = true;
+        }
+
+        //an empty virtuAL method for other classes to override
+        public virtual void MakeSound()
+        {
+
+        }
+        //a virtual method called Eat which sub classes can override
+        public virtual void Eat()
+        {
+            if (IsHungry)
+            {
+                
+                Console.WriteLine($"{Name} is eating");
+            }
+            else
+            {
+                Console.WriteLine($"{Name} is not hungry");
+            }
+        }
+
+        public virtual void Play()
+        {
+            Console.WriteLine($"{Name} is playing");
+        }
+    }
+
+    class Dog : Animal
+    {
+        //check if dog is happy
+        public bool IsHappy { get; set; }
+
+        //simple constructor where we pass the name and age to our base constructor
+        public Dog(string name, int age):base(name, age)
+        {
+            // all dogs are happy :)
+            IsHappy = true;
+        }
+
+        //simple override of the virtual method Eat()
+        public override void Eat()
+        {
+            //to call the eat method from our base class we use the keyword "base"
+            base.Eat();
+        }
+
+        // override of the virtual method Eat()
+        public override void MakeSound()
+        {
+            //since every animal make a totally different sound
+            //each animal will implement their own version of MakeSound
+            Console.WriteLine("WUUF");
+
+        }
+        //override of the virtual method Play()
+        public override void Play()
+        {
+            if (IsHappy)
+            {
+                base.Play();
+            }
+            
+        }
+    }
+
 }
 
