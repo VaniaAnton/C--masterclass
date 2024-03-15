@@ -1,37 +1,25 @@
 ﻿using System;
-using Internal;
 
 namespace Section.Ninth
 {
 	public class InheritanceDemo
 	{
-		public Section9()
-		{
-		}
+		public static void Test()
+        {
+            Radio myRadio = new Radio(false, "Sony");
+            myRadio.SwitchOn();
+            myRadio.ListenRadio();
+
+            TV myTV = new TV(false, "Sansung");
+            myTV.SwitchOn();
+            myTV.WatchTV();
+        }
 	}
 
-    class Radio
+    //Child class
+    class Radio : ElectricalDevice
     {
-        //boolean to determine the state ot the radio
-        public bool IsOn { get; set; }
-        //string for the brand name of radio
-        public string Brand { get; set; }
-
-        public Radio(bool isOn, string brand)
-        {
-            this.Brand = brand;
-            this.IsOn = isOn;
-        }
-        //switch on the radio
-        public void SwitchOn()
-        {
-            IsOn = true;
-        }
-        //switch off the radio
-        public void SwitchOff()
-        {
-            IsOn = false;
-        }
+        public Radio(bool isOn, string brand):base(isOn, brand){}
         //method to listen to the radio
         public void ListenRadio()
         {
@@ -48,31 +36,16 @@ namespace Section.Ninth
         }
 
     }
-    class TV
+    class TV : ElectricalDevice
     {
-        //boolean to determine the state ot the TV
-        public bool IsOn { get; set; }
-        //string for the brand name of TV
-        public string Brand { get; set; }
 
-        public TV(bool isOn, string brand)
+        public TV(bool isOn, string brand):base(isOn, brand)
         {
             this.Brand = brand;
             this.IsOn = isOn;
         }
-
-        //switch on the TV
-        public void SwitchOn()
-        {
-            IsOn = true;
-        }
-        //switch off the TV
-        public void SwitchOff()
-        {
-            IsOn = false;
-        }
         //method to watch TV
-        public void ListenRadio()
+        public void WatchTV()
         {
             if (IsOn)
             {
@@ -84,6 +57,32 @@ namespace Section.Ninth
                 //print the error
                 Console.WriteLine("TV is switched off, switch it on first");
             }
+        }
+    }
+
+    //Parent/Base class
+    class ElectricalDevice
+    {
+        //boolean to determine the state ot the Electrical Device
+        public bool IsOn { get; set; }
+        //string for the brand name of Electrical Device
+        public string Brand { get; set; }
+
+        public ElectricalDevice(bool isOn, string brand)
+        {
+            this.Brand = brand;
+            this.IsOn = isOn;
+        }
+
+        //switch on the Electrical Device
+        public void SwitchOn()
+        {
+            IsOn = true;
+        }
+        //switch off the Electrical Device
+        public void SwitchOff()
+        {
+            IsOn = false;
         }
     }
 }

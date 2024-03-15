@@ -1,4 +1,4 @@
-﻿using Section.Eighth;
+﻿using Section.Ninth;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Debugging.MainDebug();
+			InheritanceDemo.Test();
 
 
 			Console.ReadKey();
