@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Section.Eight
+namespace Section.Eighth
 {
 	public  class Debugging 
 	{
