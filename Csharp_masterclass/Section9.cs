@@ -1,20 +1,37 @@
 ﻿using System;
+using System.Threading;
 
 namespace Section.Ninth
 {
-    //------------Inheritance examples--------------
+    //------------Inheritance 1 examples--------------
 	public class InheritanceDemo
 	{
+        //run code for Inheritance 1
 		public static void Test()
         {
-            Radio myRadio = new Radio(false, "Sony");
-            myRadio.SwitchOn();
-            myRadio.ListenRadio();
+            //Radio myRadio = new Radio(false, "Sony");
+            //myRadio.SwitchOn();
+            //myRadio.ListenRadio();
 
-            TV myTV = new TV(false, "Sansung");
-            myTV.SwitchOn();
-            myTV.WatchTV();
+            //TV myTV = new TV(false, "Sansung");
+            //myTV.SwitchOn();
+            //myTV.WatchTV();
+
+            Post post1 = new Post("Thanks for the birthday wishes", true, "Denis Panos");
+            Console.WriteLine(post1.ToString());
+
+            ImagePost imagePost = new ImagePost("Check out my new shoes", "Denis Panos", "http://images.com/shoes", true);
+            VideoPost videoPost = new VideoPost("FallVideo", "Denis Panos", "http://video.com/fallvideo", 100, true);
+
+            videoPost.Play();
+            Console.ReadKey();
+            videoPost.Stop();
+
+
+            Console.WriteLine(imagePost.ToString());
+            Console.WriteLine(videoPost.ToString());
         }
+
 	}
     //Child classes
     class Radio : ElectricalDevice
@@ -178,6 +195,143 @@ namespace Section.Ninth
             }
             
         }
+    }
+
+
+    //--------More about Inheritance 2------------
+
+    class Post
+    {
+        private static int currentPostId;
+
+        protected int  ID { get; set; }
+        protected string Title { get; set; }
+        protected string SendByUsername { get; set; }
+        protected bool IsPublic { get; set; }
+
+        public Post()
+        {
+            ID = 0;
+            Title = "My first post";
+            IsPublic = true;
+            SendByUsername = "Denis Panos";
+        }
+
+        public Post(string title, bool isPublic, string sendByUsername)
+        {
+            this.ID = GetNextID();
+            this.Title = title;
+            this.IsPublic = isPublic;
+            this.SendByUsername = sendByUsername;
+        }
+
+        protected int GetNextID()
+        {
+            return ++currentPostId;
+        }
+
+        public void Update(string title, bool isPublic)
+        {
+            this.Title = title;
+            this.IsPublic = isPublic;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} - {1} - {2}", this.ID, this.Title, this.SendByUsername);
+        }
+    }
+
+    //ImagePost derives from Post and adda a property (ImageURL) and two constructors
+    class ImagePost : Post
+    {
+        public string ImageURL { get; set; }
+
+        public ImagePost() { }
+
+        public ImagePost(string title, string sendByUsername, string imageURL, bool isPublic)
+        {
+            this.ID = GetNextID();
+            this.Title = title;
+            this.IsPublic = isPublic;
+            this.SendByUsername = sendByUsername;
+
+            this.ImageURL = imageURL;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} - {1} - {2} - {3}", this.ID, this.Title, this.ImageURL,  this.SendByUsername);
+        }
+    }
+
+    //VideoPost with Timer and CallBack methods
+    class VideoPost : Post
+    {
+        //member field
+        protected bool isPlaying = false;
+        protected int currDuration = 0;
+        Timer timer;
+
+        //properties
+        public string VideoURL { get; set; }
+        public int Length { get; set; }
+
+        public VideoPost() { }
+
+        public VideoPost(string title, string sendByUsername, string videoURL, int length, bool isPublic)
+        {
+            this.ID = GetNextID();
+            this.Title = title;
+            this.IsPublic = isPublic;
+            this.SendByUsername = sendByUsername;
+
+            this.VideoURL = videoURL;
+            this.Length = length;
+        }
+
+        public void Play()
+        {
+            if (!isPlaying)
+            {
+                isPlaying = true;
+                Console.WriteLine("Playing");
+                timer = new Timer(TimerCallback, null, 0, 1000);
+            }
+        }
+
+        private void TimerCallback(Object o)
+        {
+            if (currDuration < Length)
+            {
+                currDuration++;
+                Console.WriteLine("Video at {0}s", currDuration);
+                GC.Collect();
+            }
+            else
+            {
+                Stop();
+            }
+        }
+        public void Stop()
+        {
+            if (isPlaying)
+            {
+                isPlaying = false;
+                Console.WriteLine("Stoppped at {0}s", currDuration);
+                currDuration = 0;
+                timer.Dispose();
+            }
+         
+        }
+        public override string ToString()
+        {
+            return String.Format("{0} - {1} - {2} - {3} - {4}", this.ID, this.Title, this.VideoURL, this.Length,  this.SendByUsername);
+        }
+
+
+
+
     }
 
 }
