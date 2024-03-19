@@ -1,4 +1,4 @@
-﻿using Section.Ninth.Challenge;
+﻿using Section.Ninth;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			RunProgram.Run();
+			Interfaces.Run();
 
 
 			Console.ReadKey();
