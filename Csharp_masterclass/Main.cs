@@ -1,4 +1,4 @@
-﻿using Section.Ninth;
+﻿using Section.Ninth.Interface;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Interfaces.Run();
+			TestInterface.Test();
 
 
 			Console.ReadKey();
