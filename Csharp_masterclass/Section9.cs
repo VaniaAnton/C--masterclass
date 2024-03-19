@@ -334,7 +334,7 @@ namespace Section.Ninth
 
     }
 
-    //-----------Interface---------------
+    //-----------Interface (small example) ---------------
     class Interfaces
     {
         public static void Run()
