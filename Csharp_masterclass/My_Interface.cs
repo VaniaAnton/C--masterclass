@@ -85,6 +85,7 @@ namespace Section.Ninth.Interface
 			CollectionSum(numList);
 
 			CollectionSum(numArray);
+
 			static void CollectionSum(IEnumerable<int> anyCollection)
 			{
 				int sum = 0;
