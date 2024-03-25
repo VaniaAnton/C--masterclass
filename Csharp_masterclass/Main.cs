@@ -1,4 +1,4 @@
-﻿using Section.Tenth;
+﻿using Section.Tenth.TextFile;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			AbstractDemo.Test();
+			TextFile.Test();
 
 
 			Console.ReadKey();
