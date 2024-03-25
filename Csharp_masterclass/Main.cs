@@ -1,4 +1,4 @@
-﻿using Section.Tenth.TextFile;
+﻿using Section.Tenth.Game;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			TextFile.Test();
+			ParsingGame.Test();
 
 
 			Console.ReadKey();
