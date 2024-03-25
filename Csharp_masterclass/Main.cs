@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			PolymorphismDemo.Test();
+			AbstractDemo.Test();
 
 
 			Console.ReadKey();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Section.Tenth
 {
+    //Polymorphism 
 	public class PolymorphismDemo
 	{
 		public static void Test()
@@ -139,6 +140,99 @@ namespace Section.Tenth
         public string Owner { get; set; } = "No owner";
 
     }
+
+    //AbstractClass
+    public class AbstractDemo
+    {
+        public static void Test()
+        {
+            Cube cube = new Cube(3.5);
+            cube.GetInfo();
+            cube.Volume();
+
+            Shape[] shapes = { new Sphere(4), new Cube(3) };
+
+            foreach (Shape shape in shapes)
+            {
+                shape.GetInfo();
+                Console.WriteLine("{0} has a volume of {1}", shape.Name, shape.Volume());
+
+                Cube iceCube = shape as Cube;
+                if (iceCube == null)
+                {
+                    Console.WriteLine("This shape is no cube");
+                }
+                if (shape is Cube)
+                {
+                    Console.WriteLine("This shape is a Cube");
+                }
+
+                object cube1 = new Cube(7);
+                Cube cube2 = (Cube)cube1;
+
+                Console.WriteLine("{0} has a Volume {1}", cube2.Name, cube2.Volume());
+            }
+        }
+    }
+
+    abstract class Shape
+    {
+        public string Name { get; set; }
+
+        public virtual void GetInfo()
+        {
+            Console.WriteLine("This is a {0}", Name);
+        }
+
+        public abstract double Volume();
+
+    }
+
+    class Cube : Shape
+    {
+        public double Length { get; set; }
+
+        public Cube(double length)
+        {
+            Name = "Cude";
+            Length = length;
+        }
+
+        public override double Volume()
+        {
+            return Math.Pow(Length, 3);
+        }
+
+        public override void GetInfo()
+        {
+            base.GetInfo();
+            Console.WriteLine("The Cube has a Length of {0}", Length);
+        }
+    }
+
+    class Sphere : Shape
+    {
+        public double Radius { get; set; }
+
+        public Sphere(double radius)
+        {
+            Name = "Sphere";
+            Radius = radius;
+        }
+
+        public override double Volume()
+        {
+            return Math.PI * (Math.Pow(Radius, 3)) * 4 / 3;
+        }
+
+        public override void GetInfo()
+        {
+            base.GetInfo();
+            Console.WriteLine("The Sphere has a radius of {0}", Radius);
+        }
+    }
+
+
 
 
 }
