@@ -1,4 +1,4 @@
-﻿using Section.Ninth.Interface;
+﻿using Section.Tenth;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			TestInterface.Test();
+			PolymorphismDemo.Test();
 
 
 			Console.ReadKey();
