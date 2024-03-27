@@ -57,5 +57,27 @@ namespace Section.Eleventh
 			Console.WriteLine("Lower number is: " + Math.Min(n1,n2));
 		}
 	}
+	public class RandomClass
+	{
+		public static void Test()
+		{
+			Console.WriteLine("Enter your question:");
+			Console.ReadLine();
+			Random yesNoMaybe = new Random();
+			int answerNum = yesNoMaybe.Next(1, 4);
+			if (answerNum == 1)
+			{
+				Console.WriteLine("Yes");
+			}
+			else if (answerNum == 2)
+			{
+				Console.WriteLine("Maybe");
+			}
+			else
+			{
+				Console.WriteLine("No");
+			}
+		}
+	}
 }
 
