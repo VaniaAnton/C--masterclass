@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			Section11.Test();
+			MathClass.Test();
 
 
 			Console.ReadKey();

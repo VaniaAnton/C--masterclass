@@ -3,7 +3,7 @@
 namespace Section.Eleventh
 {
 	enum Day { Mo, Tu, we, Th, Fr, Sa, Su};
-	enum Month { Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+	enum Month { Jan = 1, Feb, Mar, Apr, May, Jun, Jul = 12, Aug, Sep, Oct, Nov, Dec};
 
 	struct Game
 	{
@@ -39,11 +39,22 @@ namespace Section.Eleventh
 			Day fr = Day.Fr;
 			Day su = Day.Su;
 
-			Day a = Day.Fr;
-
-			Console.WriteLine(fr == a);
+			
 			Console.WriteLine(Day.Mo);
 			Console.WriteLine((int)Month.Feb);
+		}
+	}
+
+	public class MathClass
+	{
+		public static void Test()
+		{
+			Console.WriteLine("Ceiling: " + Math.Ceiling(15.3));
+			Console.WriteLine("Floor: " + Math.Floor(15.3));
+
+			int n1 = 13;
+			int n2 = 9;
+			Console.WriteLine("Lower number is: " + Math.Min(n1,n2));
 		}
 	}
 }
