@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			RandomClass.Test();
+			RegularExpression.Test();
 
 
 			Console.ReadKey();
