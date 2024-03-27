@@ -1,4 +1,4 @@
-﻿using Section.Tenth.Game;
+﻿using Section.Eleventh;
 
 namespace Section
 {
@@ -6,7 +6,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			ParsingGame.Test();
+			Section11.Test();
 
 
 			Console.ReadKey();
