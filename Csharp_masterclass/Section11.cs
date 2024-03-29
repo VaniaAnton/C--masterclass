@@ -101,5 +101,53 @@ namespace Section.Eleventh
 			}
         }
     }
+
+	class DateTimeClass
+	{
+		public static void Test()
+		{
+            DateTime dateTime = new DateTime(2024, 5, 5);
+            Console.WriteLine("My Birthday is {0}", dateTime);
+			//write today
+			Console.WriteLine(DateTime.Today);
+			//write current time
+			Console.WriteLine(DateTime.Now);
+
+			//write tomorrow
+			DateTime tomorrow = GetTomorrow();
+			Console.WriteLine("Tomorrow will be {0}", tomorrow);
+			Console.WriteLine("Today is {0}", DateTime.Today.DayOfWeek);
+
+			int days = DateTime.DaysInMonth(2000, 2);
+			Console.WriteLine("feb in 2000 has {0} days", days);
+			days = DateTime.DaysInMonth(2001, 2);
+			Console.WriteLine("feb in 2001 has {0} days", days);
+			days = DateTime.DaysInMonth(2004, 2);
+			Console.WriteLine("feb in 2004 has {0} days", days);
+
+			DateTime now = DateTime.Now;
+			Console.WriteLine("Minute {0}", now.Minute);
+
+			Console.WriteLine("Write your birthday in this format: yyyy-mm-dd");
+			string input = Console.ReadLine();
+			if (DateTime.TryParse(input, out dateTime))
+			{
+				Console.WriteLine(dateTime);
+				TimeSpan daysPassed = now.Subtract(dateTime);
+				Console.WriteLine("You have completed {0} days", daysPassed.Days);
+			}
+			else
+			{
+				Console.WriteLine("Wrong input");
+			}
+        }
+
+
+		static DateTime GetTomorrow()
+		{
+			return DateTime.Today.AddDays(1);
+		}
+		
+	}
 }
 

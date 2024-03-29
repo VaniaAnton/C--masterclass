@@ -1,4 +1,5 @@
-﻿using Section.Tenth.Game;
+﻿using Section.Eleventh;
+using Section.Tenth.Game;
 
 namespace Section
 {
@@ -6,7 +7,7 @@ namespace Section
 	{
 		static public void Main(string[] args)
 		{
-			ParsingGame.Test();
+            DateTimeClass.Test();
 
 
 			Console.ReadKey();
